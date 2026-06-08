@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Descuentos Shopify</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <header>
+    <h1>🛍️ Descuentos Masivos</h1>
+    <div>
+      <button id="btn-shops" class="btn btn-secondary">Tiendas</button>
+      <button id="btn-discount" class="btn btn-secondary">Aplicar</button>
+      <button id="btn-history" class="btn btn-secondary">Historial</button>
+    </div>
+  </header>
+
+  <div class="container">
+    <!-- Shops view -->
+    <div id="view-shops" class="view">
+      <div class="card">
+        <h2>Tiendas conectadas</h2>
+        <div class="form-row">
+          <input type="text" id="new-shop" placeholder="tienda.myshopify.com" />
+          <button id="connect-shop" class="btn btn-primary">Conectar</button>
+        </div>
+        <table class="table">
+          <thead>
+            <tr><th>Tienda</th><th>Conectada</th><th></th></tr>
+          </thead>
+          <tbody id="shops-list"></tbody>
+        </table>
+      </div>
+    </div>
+
+    <!-- Discount view -->
+    <div id="view-discount" class="view hidden">
+      <div class="card">
+        <h2>Aplicar descuento</h2>
+        <div class="form-row">
+          <label>Tienda</label>
+          <select id="discount-shop"></select>
+        </div>
+        <div class="form-row">
+          <label>Colecciones</label>
+          <select id="discount-collections" multiple size="6" style="min-height:120px"></select>
+        </div>
+        <div class="form-row">
+          <label><input type="checkbox" id="all-collections" checked /> Toda la tienda</label>
+        </div>
+        <div class="form-row">
+          <label>% Descuento</label>
+          <input type="number" id="discount-percent" min="1" max="99" value="20" />
+        </div>
+        <div class="form-row">
+          <label><input type="checkbox" id="exclude-discounted" checked /> Excluir productos ya con descuento</label>
+        </div>
+        <div class="form-row">
+          <button id="preview-discount" class="btn btn-secondary">Preview</button>
+          <button id="apply-discount" class="btn btn-primary">Aplicar descuento</button>
+        </div>
+        <pre id="discount-result" style="margin-top:12px; background:#f6f6f7; padding:12px; border-radius:6px; font-size:13px; white-space: pre-wrap;"></pre>
+      </div>
+    </div>
+
+    <!-- History view -->
+    <div id="view-history" class="view hidden">
+      <div class="card">
+        <h2>Historial de operaciones</h2>
+        <div class="form-row">
+          <label>Tienda</label>
+          <select id="history-shop"></select>
+        </div>
+        <table class="table">
+          <thead>
+            <tr>
+              <th>Fecha</th>
+              <th>%</th>
+              <th>Productos</th>
+              <th>Variantes</th>
+              <th>Estado</th>
+              <th></th>
+            </tr>
+          </thead>
+          <tbody id="history-list"></tbody>
+        </table>
+      </div>
+    </div>
+  </div>
+
+  <script src="app.js"></script>
+</body>
+</html>

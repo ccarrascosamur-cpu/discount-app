@@ -1,0 +1,7 @@
+tunnel: c3e85ff2-8acc-491d-a312-cbb038dac14e
+credentials-file: C:\Users\churr\.cloudflared\c3e85ff2-8acc-491d-a312-cbb038dac14e.json
+
+ingress:
+  - hostname: descuentos.emmagination.cl
+    service: http://localhost:3000
+  - service: http_status:404

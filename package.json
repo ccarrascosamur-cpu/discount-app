@@ -1,0 +1,21 @@
+{
+  "name": "discounts-app",
+  "version": "1.0.0",
+  "description": "App privada para aplicar descuentos masivos en Shopify",
+  "main": "index.js",
+  "scripts": {
+    "start": "node index.js",
+    "dev": "node --watch index.js"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "dotenv": "^16.4.5",
+    "express": "^4.19.2",
+    "pg": "^8.21.0"
+  },
+  "engines": {
+    "node": ">=20.0.0"
+  }
+}
